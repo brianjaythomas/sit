@@ -15,6 +15,7 @@
  * You should have received a copy of the GNU General Public License
  * along with sit.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 var BellRinger = React.createClass({
   render: function() {
     return (
@@ -27,13 +28,13 @@ var BellRinger = React.createClass({
   handleSubmit: function (e) {
     e.preventDefault();
     $.ajax({
-      url: 'ring_bell.php',
+      url: 'async/ring_bell.php',
       type: 'POST',
       success: function(data) {
         console.log(data);
       }.bind(this),
       error: function(xhr, status, err) {
-        console.error('ring_bell.php', status, err.toString());
+        console.error('async/ring_bell.php', status, err.toString());
       }.bind(this)
     });
   }
